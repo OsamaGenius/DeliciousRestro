@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="840.0" prefWidth="830.0" styleClass="bg-white" stylesheets="@../../aid/css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restro.controllers.admins.JuiceController">
+   <children>
+      <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" />
+      <JFXTabPane fx:id="tabPane" styleClass="tabpane" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="3.0">
+         <tabs>
+            <Tab fx:id="viewTab" text="VIEW ALL JUICES">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="819.0">
+                     <children>
+                        <VBox layoutX="315.0" layoutY="228.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="742.0" prefWidth="809.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="777.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <JFXButton onAction="#printJuicesMenu" styleClass="main-button" text="Extract">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="PRINTER" size="18" styleClass="icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXTextField fx:id="search" labelFloat="true" onKeyReleased="#findJuice" prefHeight="30.0" prefWidth="350.0" promptText="Search juices by their names, types or prices" styleClass="fields">
+                                       <HBox.margin>
+                                          <Insets left="321.0" />
+                                       </HBox.margin></JFXTextField>
+                                    <MaterialDesignIconView glyphName="MAGNIFY" rotate="360.0" size="24">
+                                       <HBox.margin>
+                                          <Insets left="-20.0" top="5.0" />
+                                       </HBox.margin>
+                                    </MaterialDesignIconView>
+                                 </children>
+                              </HBox>
+                              <JFXTreeTableView fx:id="table" prefHeight="720.0" prefWidth="779.0" styleClass="table">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </JFXTreeTableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIBRARY" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+            <Tab fx:id="addTab" text="ADD JUICE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="121.0" layoutY="78.0" prefHeight="473.0" prefWidth="750.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="703.0" prefWidth="410.0" styleClass="border-primary">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Add New Juices" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-primary" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Circle fx:id="addImg" fill="#f5f5f5" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" styleClass="primary-shadow">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="124.0" />
+                                             </VBox.margin>
+                                          </Circle>
+                                          <HBox>
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <JFXTextField fx:id="imgAddTxt" editable="false" labelFloat="true" prefHeight="30.0" prefWidth="369.0" promptText="Image Name" styleClass="fields" />
+                                                      <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="192.0">
+                                                         <children>
+                                                            <JFXButton maxHeight="1.7976931348623157E308" onAction="#selectJuiceImage" prefHeight="40.0" prefWidth="100.0" text="Choose">
+                                                               <styleClass>
+                                                                  <String fx:value="main-button" />
+                                                                  <String fx:value="border-0" />
+                                                                  <String fx:value="shadow-none" />
+                                                               </styleClass>
+                                                               <HBox.margin>
+                                                                  <Insets top="0.3" />
+                                                               </HBox.margin>
+                                                            </JFXButton>
+                                                            <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#uploadImgAdd" prefHeight="40.0" prefWidth="100.0" text="Upload">
+                                                               <styleClass>
+                                                                  <String fx:value="danger-button" />
+                                                                  <String fx:value="border-0" />
+                                                                  <String fx:value="shadow-none" />
+                                                               </styleClass>
+                                                               <HBox.margin>
+                                                                  <Insets top="0.3" />
+                                                               </HBox.margin>
+                                                            </JFXButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="-192.0" />
+                                                         </HBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="imgAddMsg" prefHeight="20.0" text="Image Messages" textFill="#000000a1" visible="false" />
+                                       </children>
+                                    </VBox>
+                                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXTextField fx:id="nameAddTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateName" prefHeight="30.0" prefWidth="369.0" promptText="Juice Name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="GLASS_FLUTE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="nameAddMsg" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Juice name Messages" textFill="#000000a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="31.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <children>
+                                          <JFXTextField fx:id="priceAddTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validatePrice" prefHeight="30.0" prefWidth="369.0" promptText="Juice Price" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="CURRENCY_USD" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="priceAddMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Juice price Messages" textFill="#000000a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXComboBox fx:id="typeAddTxt" labelFloat="true" onAction="#validateType" prefWidth="370.0" promptText="Choose juice type" styleClass="comboBox" visibleRowCount="2">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
+                                    <Label fx:id="typeAddMsg" prefHeight="20.0" text="Juice type messages" textFill="#000000a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXTextArea fx:id="descriptionAddTxt" labelFloat="true" prefHeight="120.0" promptText="Juice description (Optional)" styleClass="fields">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextArea>
+                                    <JFXButton onAction="#createJuices" styleClass="main-button" text="Insert">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="PLUS_CIRCLE" size="20" styleClass="icon" />
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="290.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="484.0" prefWidth="320.0" styleClass="border-danger">
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Latest Added Juices" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-danger" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <VBox fx:id="addLatestJuices">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="FOOD" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+            <Tab fx:id="updateTabe" text="UPDATE JUICE">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="473.0" prefWidth="750.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="709.0" prefWidth="410.0" styleClass="border-primary">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <JFXTextField fx:id="hidden" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" />
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Edit Exsisting Juices" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-primary" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Circle fx:id="editImg" fill="#f5f5f5" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" styleClass="primary-shadow">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="124.0" />
+                                             </VBox.margin>
+                                          </Circle>
+                                          <HBox>
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <JFXTextField fx:id="imgEditTxt" editable="false" labelFloat="true" prefHeight="30.0" prefWidth="369.0" promptText="Image Name" styleClass="fields" />
+                                                      <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="192.0">
+                                                         <children>
+                                                            <JFXButton maxHeight="1.7976931348623157E308" onAction="#selectJuiceImage" prefHeight="40.0" prefWidth="100.0" text="Choose">
+                                                               <styleClass>
+                                                                  <String fx:value="main-button" />
+                                                                  <String fx:value="border-0" />
+                                                                  <String fx:value="shadow-none" />
+                                                               </styleClass>
+                                                               <HBox.margin>
+                                                                  <Insets top="0.3" />
+                                                               </HBox.margin>
+                                                            </JFXButton>
+                                                            <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#uploadImgEdit" prefHeight="40.0" prefWidth="100.0" text="Upload">
+                                                               <styleClass>
+                                                                  <String fx:value="danger-button" />
+                                                                  <String fx:value="border-0" />
+                                                                  <String fx:value="shadow-none" />
+                                                               </styleClass>
+                                                               <HBox.margin>
+                                                                  <Insets top="0.3" />
+                                                               </HBox.margin>
+                                                            </JFXButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="-192.0" />
+                                                         </HBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="imgEditMsg" prefHeight="20.0" text="Image Messages" visible="false" />
+                                       </children>
+                                    </VBox>
+                                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXTextField fx:id="nameEditTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateName" prefHeight="30.0" prefWidth="369.0" promptText="Juice Name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="GLASS_FLUTE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="nameEditMsg" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food name Messages" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="31.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <children>
+                                          <JFXTextField fx:id="priceEditTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validatePrice" prefHeight="30.0" prefWidth="369.0" promptText="Juice Price" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="CURRENCY_USD" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="priceEditMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food price Messages" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXComboBox fx:id="typeEditTxt" labelFloat="true" onAction="#validateType" prefWidth="370.0" promptText="Choose juice type" styleClass="comboBox" visibleRowCount="2">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
+                                    <Label fx:id="typeEditMsg" prefHeight="20.0" text="Juice type messages" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXTextArea fx:id="descriptionEditTxt" labelFloat="true" prefHeight="120.0" promptText="Juice description (Optional)" styleClass="fields">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextArea>
+                                    <HBox alignment="CENTER_RIGHT">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXButton onAction="#cancelUpdate" styleClass="warning-button" text="Cancel">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton layoutX="278.0" layoutY="10.0" onAction="#deleteJuice" styleClass="danger-button" text="Delete">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE_OCTAGON_OUTLINE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton layoutX="278.0" layoutY="10.0" onAction="#updateJuice" styleClass="main-button" text="Edit">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="484.0" prefWidth="320.0" styleClass="border-danger">
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Latest Edit Juices" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-danger" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <VBox fx:id="editLatestJuices">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="FOOD_VARIANT" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

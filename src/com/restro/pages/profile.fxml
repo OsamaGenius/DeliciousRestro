@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1300.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restro.controllers.ProfileController">
+   <children>
+      <JFXTextField fx:id="hiddenID" visible="false" />
+      <VBox layoutY="-68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1083.0" prefWidth="830.0" styleClass="bg-white" stylesheets="@../aid/css/design.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" />
+            <VBox prefHeight="399.0" prefWidth="492.0" styleClass="border-danger">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="490.0" text="Changing Your Profile" textAlignment="CENTER">
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="text-white" />
+                        <String fx:value="box-danger" />
+                     </styleClass>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Circle fx:id="profile" fill="WHITESMOKE" radius="80.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" styleClass="primary-shadow">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="165.0" top="5.0" />
+                     </VBox.margin>
+                  </Circle>
+                  <HBox>
+                     <children>
+                        <JFXTextField fx:id="image" editable="false" labelFloat="true" prefHeight="40.0" prefWidth="280.0" promptText="Image Name" styleClass="fields" />
+                        <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="192.0">
+                           <children>
+                              <JFXButton maxHeight="1.7976931348623157E308" onAction="#selectImage" prefHeight="40.0" prefWidth="100.0" text="Choose">
+                                 <styleClass>
+                                    <String fx:value="main-button" />
+                                    <String fx:value="border-0" />
+                                    <String fx:value="shadow-none" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets right="-0.5" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#uploadImage" prefHeight="40.0" prefWidth="100.0" text="Upload">
+                                 <styleClass>
+                                    <String fx:value="danger-button" />
+                                    <String fx:value="border-0" />
+                                    <String fx:value="shadow-none" />
+                                 </styleClass>
+                              </JFXButton>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="-2.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label prefHeight="20.0" text="Image Messages" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#b91414" />
+                              <Stop color="#801818" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <JFXButton onAction="#saveImage" styleClass="main-button" text="Update">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="29.0" left="170.0" right="170.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="230.0" prefWidth="492.0" styleClass="border-primary">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="490.0" text="Changing Your Username" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="text-white" />
+                        <String fx:value="main-bg-colour" />
+                     </styleClass>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox styleClass="fields">
+                     <children>
+                        <JFXTextField fx:id="username" labelFloat="true" onKeyReleased="#checkUsername" prefHeight="30.0" prefWidth="491.0" promptText="Username" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="ACCOUNT" size="20" styleClass="contect-colour">
+                           <HBox.margin>
+                              <Insets left="-24.0" top="7.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="userMsg" prefHeight="20.0" text="Username Messages" textFill="#77188000" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton onAction="#saveUsername" styleClass="main-button" text="Update">
+                     <VBox.margin>
+                        <Insets left="371.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="170.0" right="170.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox layoutX="180.0" layoutY="438.0" prefHeight="230.0" prefWidth="492.0" styleClass="border-primary">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="490.0" text="Changing Your Password" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="text-white" />
+                        <String fx:value="box-danger" />
+                     </styleClass>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox styleClass="fields">
+                     <children>
+                        <JFXPasswordField fx:id="password" labelFloat="true" onKeyReleased="#checkPassword" prefWidth="491.0" promptText="New Password" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="KEY" size="20" styleClass="contect-colour">
+                           <HBox.margin>
+                              <Insets left="-24.0" top="7.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="passMsg" prefHeight="20.0" text="Username Messages" textFill="#77188000" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton onAction="#savePassword" styleClass="main-button" text="Update">
+                     <VBox.margin>
+                        <Insets left="371.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="170.0" right="170.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox layoutX="180.0" layoutY="429.0" prefHeight="408.0" prefWidth="492.0" styleClass="border-success">
+               <children>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="490.0" text="Changing Your Contact Info" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="text-white" />
+                        <String fx:value="box-success" />
+                     </styleClass>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox styleClass="fields">
+                     <children>
+                        <JFXTextField fx:id="email" labelFloat="true" onKeyReleased="#checkEmail" prefHeight="30.0" prefWidth="491.0" promptText="Email" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="MAIL_RU" size="20" styleClass="contect-colour">
+                           <HBox.margin>
+                              <Insets left="-24.0" top="7.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="emailMsg" prefHeight="20.0" text="Email Messages" textFill="#77188000" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox layoutX="31.0" layoutY="91.0" styleClass="fields">
+                     <children>
+                        <JFXTextField fx:id="bEmail" labelFloat="true" onKeyReleased="#checkBEmail" prefHeight="30.0" prefWidth="491.0" promptText="Backup Email ( Optional )" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="MAIL_RU" size="20" styleClass="contect-colour">
+                           <HBox.margin>
+                              <Insets left="-24.0" top="7.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="bEMsg" layoutX="31.0" layoutY="136.0" prefHeight="20.0" text="Email Messages" textFill="#77188000" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox layoutX="11.0" layoutY="196.0" styleClass="fields">
+                     <children>
+                        <JFXTextField fx:id="phone" labelFloat="true" onKeyReleased="#checkPhone" prefHeight="30.0" prefWidth="448.0" promptText="Telephone ( Optional )" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="PHONE" size="20" styleClass="contect-colour">
+                           <HBox.margin>
+                              <Insets left="-24.0" top="7.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="phoneMsg" layoutX="11.0" layoutY="232.0" prefHeight="20.0" text="Email Messages" textFill="#77188000" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton onAction="#saveContactInfo" styleClass="main-button" text="Update">
+                     <VBox.margin>
+                        <Insets left="371.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="35.0" left="170.0" right="170.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

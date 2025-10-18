@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="830.0" styleClass="bg-white" stylesheets="@../../aid/css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restro.controllers.users.NewOrdersController">
+   <children>
+      <JFXTabPane fx:id="tabPane" layoutX="155.0" layoutY="143.0" styleClass="tabpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Order Foods">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="59.0" layoutY="17.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <JFXComboBox fx:id="filterFoodsBox" labelFloat="true" onAction="#filterMenuByBox" promptText="Filter : Choose Food Category" styleClass="comboBox">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXComboBox>
+                              <JFXTextField fx:id="foodsSearch" labelFloat="true" onKeyReleased="#findInMenu" prefHeight="25.0" prefWidth="298.0" promptText="Search foods by names or prices" styleClass="fields">
+                                 <HBox.margin>
+                                    <Insets left="256.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <MaterialDesignIconView glyphName="MAGNIFY" size="24" styleClass="text-light">
+                                 <HBox.margin>
+                                    <Insets left="-24.0" top="3.0" />
+                                 </HBox.margin>
+                              </MaterialDesignIconView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="146.0" layoutY="493.0" prefWidth="200.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="544.0">
+                           <children>
+                              <JFXButton onAction="#cancelOrder" styleClass="danger-button" text="Cancel">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton onAction="#showOrder" styleClass="success-button" text="View">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="EYE" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton onAction="#getTicketID" styleClass="main-button" text="Ticket ID">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="PRINTER" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="700.0" layoutY="9.0" onAction="#requestOrder" styleClass="main-button" text="Request">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="PRINTER" size="20" styleClass="icon" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="10.0" layoutY="70.0" maxHeight="-Infinity" pannable="true" prefHeight="464.0" prefWidth="790.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+                           <content>
+                              <GridPane fx:id="foodsList" alignment="CENTER" prefWidth="780.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                           <styleClass>
+                              <String fx:value="scroll-Pane" />
+                              <String fx:value="bg-white" />
+                           </styleClass>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="FOOD" size="28" styleClass="main-txt-colour" />
+               </graphic>
+            </Tab>
+            <Tab text="Order Juices">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="59.0" layoutY="17.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <JFXComboBox fx:id="filterJuicesBox" labelFloat="true" onAction="#filterMenuByBox" promptText="Filter : Choose Juice Type" styleClass="comboBox">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXComboBox>
+                              <JFXTextField fx:id="juicesSearch" labelFloat="true" onKeyReleased="#findInMenu" prefHeight="25.0" prefWidth="298.0" promptText="Search juices by names or prices" styleClass="fields">
+                                 <HBox.margin>
+                                    <Insets left="256.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <MaterialDesignIconView glyphName="MAGNIFY" size="24" styleClass="text-light">
+                                 <HBox.margin>
+                                    <Insets left="-24.0" top="3.0" />
+                                 </HBox.margin>
+                              </MaterialDesignIconView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="146.0" layoutY="493.0" prefWidth="200.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="544.0">
+                           <children>
+                              <JFXButton onAction="#cancelOrder" styleClass="danger-button" text="Cancel">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="700.0" layoutY="10.0" onAction="#showOrder" styleClass="success-button" text="View">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="EYE" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="700.0" layoutY="10.0" onAction="#getTicketID" styleClass="main-button" text="Ticket ID">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="PRINTER" size="20" styleClass="icon" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="700.0" layoutY="9.0" onAction="#requestOrder" styleClass="main-button" text="Request">
+                                 <graphic>
+                                    <MaterialDesignIconView glyphName="PRINTER" size="20" styleClass="icon" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" pannable="true" prefHeight="464.0" prefWidth="790.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+                           <content>
+                              <GridPane fx:id="juicesList" alignment="CENTER" prefWidth="780.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                              </GridPane>
+                           </content>
+                           <styleClass>
+                              <String fx:value="scroll-Pane" />
+                              <String fx:value="bg-white" />
+                           </styleClass>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="GLASS_TULIP" size="28" styleClass="main-txt-colour" />
+               </graphic>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <AnchorPane fx:id="detailsPane" layoutX="168.0" layoutY="49.0" styleClass="bg-light" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="innerBox" layoutX="163.0" layoutY="60.0" prefHeight="500.0" prefWidth="500.0">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="primary-shadow" />
+               </styleClass>
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="501.0" text="User Order Details" underline="true">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="main-bg-colour" />
+                        <String fx:value="text-white" />
+                     </styleClass>
+                  </Label>
+                  <HBox layoutX="24.0" layoutY="76.0" prefHeight="294.0" prefWidth="450.0">
+                     <children>
+                        <Label styleClass="font-subtitle" text="Order:">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <HBox>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <children>
+                              <JFXTextArea fx:id="orderTxt" editable="false" prefHeight="289.0" prefWidth="250.0" promptText="No Order" styleClass="fields" />
+                              <JFXTextArea fx:id="priceTxt" editable="false" layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="289.0" prefWidth="104.0" promptText="0 SD" styleClass="fields" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="29.0" layoutY="404.0">
+                     <children>
+                        <Label styleClass="font-subtitle" text="Total Price:">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="priceFullTxt" layoutX="10.0" layoutY="10.0" styleClass="font-subtitle" />
+                     </children>
+                  </HBox>
+                  <JFXButton layoutX="377.0" layoutY="458.0" onAction="#hideOrder" styleClass="main-button" text="Hide">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="EYE_OFF" size="20" styleClass="icon" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="amountPane" layoutX="10.0" layoutY="10.0" styleClass="bg-light" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="amountBox" layoutX="163.0" layoutY="145.0" prefHeight="317.0" prefWidth="500.0">
+               <styleClass>
+                  <String fx:value="bg-white" />
+                  <String fx:value="primary-shadow" />
+               </styleClass>
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="501.0" text="Order Amount" underline="true">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="main-bg-colour" />
+                        <String fx:value="text-white" />
+                     </styleClass>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="94.0" prefHeight="31.0" prefWidth="503.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="currentOrder" styleClass="font-subtitle">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="-3.0" layoutY="165.0" prefHeight="31.0" prefWidth="503.0" spacing="5.0">
+                     <children>
+                        <Label styleClass="font-subtitle" text="How many:">
+                           <HBox.margin>
+                              <Insets right="10.0" top="-25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="53.0" prefWidth="349.0">
+                           <children>
+                              <JFXTextField fx:id="orderAmount" labelFloat="true" onKeyReleased="#validateOrderNum" prefHeight="31.0" prefWidth="249.0" promptText="Enter order number" styleClass="fields">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <Label fx:id="orderNumMsg" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="-2.0" layoutY="252.0" prefHeight="30.0" prefWidth="503.0" spacing="5.0">
+                     <children>
+                        <JFXButton onAction="#cancelOrderSelection" styleClass="danger-button" text="Cancel">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton layoutX="212.0" layoutY="10.0" onAction="#completeOrderSelection" styleClass="main-button" text="Done">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="THUMB_UP" size="20" styleClass="icon" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

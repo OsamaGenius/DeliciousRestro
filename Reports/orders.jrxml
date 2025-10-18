@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orders" pageWidth="300" pageHeight="450" columnWidth="260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6779aa95-9819-437f-9d84-52c3846930ae">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Delorest Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    `orders`.`order_id`,
+    `orders`.`order`,
+    `users`.`username`,
+    `orders`.`price`,
+    `orders`.`full_price`
+FROM
+    `orders`,
+    `users`
+WHERE
+    `orders`.`user_id` = `users`.`id`
+ORDER BY
+    `orders`.`id`
+DESC
+LIMIT 1]]>
+	</queryString>
+	<field name="order_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="order_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="order" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="order"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="username" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="username"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<field name="price" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="full_price" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="full_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="-20" y="-20" width="300" height="82" backcolor="rgba(179, 154, 105, 0.6627451)" uuid="7113d9c9-0a13-4f77-b95b-f8534572bcae"/>
+				<image>
+					<reportElement x="0" y="0" width="80" height="80" uuid="05ba0d4b-6f64-4c1e-8585-7c098cb54bf4"/>
+					<imageExpression><![CDATA["file:Logos/ca.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="80" y="5" width="159" height="30" forecolor="rgba(61, 47, 28, 0.78431374)" uuid="99e7e9d4-ee13-44d0-89ad-609c03428343"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="20" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Delicious Restro]]></text>
+				</staticText>
+				<textField pattern="MMMMM dd, yyyy">
+					<reportElement x="80" y="35" width="159" height="30" forecolor="rgba(61, 47, 28, 0.7254902)" uuid="b4f60c8f-e45f-47ae-9733-9a20c683096f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="219" y="-36" width="111" height="81" uuid="dba3a893-fdea-49e0-865f-8f2aa5620dc4"/>
+				<imageExpression><![CDATA["file:Logos/co.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="260" height="1" backcolor="rgba(112, 83, 40, 0.7921569)" uuid="60fec3bf-c718-4030-b6fe-87f56aa48365"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="286" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="3" width="260" height="281" backcolor="rgba(128, 32, 31, 0.0)" uuid="039163a9-025c-4ddd-bbde-a92278a3a3a9"/>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="260" height="25" forecolor="rgba(255, 255, 255, 0.8039216)" backcolor="#635239" uuid="e69d8b4b-a512-4277-954c-44a1930272f7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<text><![CDATA[Order ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="57" width="260" height="25" forecolor="rgba(255, 255, 255, 0.8039216)" backcolor="#635239" uuid="8db66c35-730f-43d8-a395-06bc78129544"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<text><![CDATA[Order]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="28" width="260" height="25" uuid="687a4901-853d-42e0-92c0-f79e6505d9f1">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="232adc30-6882-4863-a80f-69f4d0f877ca"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="86" width="190" height="174" uuid="ef36ac52-184e-461f-aa53-06935dea27bf">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="232adc30-6882-4863-a80f-69f4d0f877ca"/>
+					</reportElement>
+					<box padding="0">
+						<pen lineColor="rgba(0, 0, 0, 0.43137255)"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Justified">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{order}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="190" y="86" width="70" height="174" uuid="e699bf2c-019a-4763-9235-3df6d0f3e14d">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99a070d0-f7cb-4bad-a209-bc4325fcc696"/>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="190" y="260" width="70" height="21" uuid="0a2fc993-128c-4968-b7dc-ccbfbfd2a373">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b47d45a-b3dd-40a2-a668-b40fead1d607"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{full_price}+" SD"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="260" width="188" height="21" uuid="dda3080b-dea1-4170-a687-cf68679b0c68"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<text><![CDATA[Full Order Price]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="4" width="260" height="1" backcolor="rgba(112, 83, 40, 0.78431374)" uuid="c5d73ffd-8404-4374-aaa3-6617dfd8025a"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="3" width="260" height="25" backcolor="rgba(105, 89, 65, 0.73333335)" uuid="a9461d67-64d3-4d0d-b4f9-d83c106ee728"/>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="0" width="68" height="25" forecolor="rgba(255, 255, 255, 0.6862745)" backcolor="#635239" uuid="a006ca15-8a67-4665-9c54-f34aa5e8ed9f"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<text><![CDATA[Ordered By]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="70" y="0" width="190" height="25" uuid="97132621-7e77-40b4-8a77-3e3fc5c54ed4"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

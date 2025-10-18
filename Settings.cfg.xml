@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\u_s_e\Documents\NetBeansProjects\DeliciousRestro\dist\DeliciousRestro.jar</jar>
+  <outfile>C:\Users\u_s_e\Documents\NetBeansProjects\DeliciousRestro\dist\Delicious Restro.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\u_s_e\Documents\NetBeansProjects\DeliciousRestro\src\com\restro\aid\imgs\Chef.ico</icon>
+  <classPath>
+    <mainClass>com.restro.manager.Manager</mainClass>
+    <cp>lib/AnimateFX-1.2.0.jar</cp>
+    <cp>lib/bcmail-jdk14-1.38.jar</cp>
+    <cp>lib/bcmail-jdk14-138.jar</cp>
+    <cp>lib/bcprov-jdk14-1.38.jar</cp>
+    <cp>lib/bcprov-jdk14-138.jar</cp>
+    <cp>lib/bctsp-jdk14-1.38.jar</cp>
+    <cp>lib/commons-beanutils-1.8.3.jar</cp>
+    <cp>lib/commons-beanutils-1.9.3.jar</cp>
+    <cp>lib/commons-beanutils-1.9.4.jar</cp>
+    <cp>lib/commons-collections-3.2.1-1.0.0.jar</cp>
+    <cp>lib/commons-collections-3.2.2.jar</cp>
+    <cp>lib/commons-digester-2.1.jar</cp>
+    <cp>lib/commons-logging-1.1.1.jar</cp>
+    <cp>lib/commons-logging-1.2.jar</cp>
+    <cp>lib/controlsfx-8.40.12.jar</cp>
+    <cp>lib/fontawesomefx-8.9.jar</cp>
+    <cp>lib/itext-2.1.7.jar</cp>
+    <cp>lib/itextpdf-5.5.4.jar</cp>
+    <cp>lib/jasperreports-6.6.0.jar</cp>
+    <cp>lib/jasperreports-fonts-6.1.1.jar</cp>
+    <cp>lib/javac-1.8.0-u20.jar</cp>
+    <cp>lib/jfoenix-8.0.4.jar</cp>
+    <cp>lib/joda-time-2.12.0.jar</cp>
+    <cp>lib/mysql-connector-java-5.1.48-bin.jar</cp>
+  </classPath>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0_171</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.2.0.1</fileVersion>
+    <txtFileVersion>1.2.0.1</txtFileVersion>
+    <fileDescription>Restaurant Management System</fileDescription>
+    <copyright>Copyright @ Osama&apos;s CO</copyright>
+    <productVersion>1.2.0.1</productVersion>
+    <txtProductVersion>1.2.0.1</txtProductVersion>
+    <productName>Delicious Restro</productName>
+    <companyName>Osama&apos;s CO</companyName>
+    <internalName>Delicious Restro</internalName>
+    <originalFilename>Delicious Restro.exe</originalFilename>
+    <trademarks>Osama@DeliciousRestro</trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>

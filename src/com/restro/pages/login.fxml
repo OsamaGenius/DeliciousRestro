@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="830.0" styleClass="mainFxmlClass" stylesheets="@../aid/css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restro.controllers.AuthController">
+   <children>
+      <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" />
+      <AnchorPane layoutX="192.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" styleClass="content" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <HBox layoutX="513.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <children>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" minHeight="-Infinity" onAction="#minimize" prefHeight="30.0" prefWidth="30.0" ripplerFill="#6aa9c2" styleClass="bar-btn">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="WINDOW_MINIMIZE" size="18" styleClass="menu-btn" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" minHeight="-Infinity" onAction="#close" prefHeight="30.0" prefWidth="30.0" ripplerFill="#6aa9c2" styleClass="bar-btn">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="WINDOW_CLOSE" size="18" styleClass="menu-btn" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <VBox layoutX="59.0" layoutY="62.0" prefHeight="590.0" prefWidth="410.0" styleClass="main-bg-colour" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="pane" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" maxWidth="1.7976931348623157E308" prefHeight="71.0" text="DeliciousRestro">
+                     <styleClass>
+                        <String fx:value="main-bg-colour" />
+                        <String fx:value="font-title" />
+                        <String fx:value="content" />
+                        <String fx:value="text-white" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../aid/imgs/Chef.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label maxWidth="1.7976931348623157E308" prefHeight="20.0" text="Greate Foods" underline="true">
+                     <styleClass>
+                        <String fx:value="font-subtitle" />
+                        <String fx:value="text-white" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fitHeight="146.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" styleClass="content">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../aid/imgs/food.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="116.0" lineSpacing="3.0" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="361.0" text="de vLorem ipsum dolor sit amet, consectetur adipisicing elit. &#10;molestiae, ipsa, tenetur itaque dicta doretos libero delectus&#10;incidunt fuga repudiandae est rerum" textAlignment="JUSTIFY">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="text-white" />
+                        <String fx:value="text-justify" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="116.0" maxWidth="1.7976931348623157E308" prefHeight="20.0" text="Fursh Juices" underline="true">
+                     <styleClass>
+                        <String fx:value="font-subtitle" />
+                        <String fx:value="text-white" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fitHeight="146.0" fitWidth="380.0" layoutX="25.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" styleClass="content">
+                     <image>
+                        <Image url="@../aid/imgs/juice.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="260.0" lineSpacing="3.0" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="361.0" text="de vLorem ipsum dolor sit amet, consectetur adipisicing elit. &#10;molestiae, ipsa, tenetur itaque dicta doretos libero delectus&#10;incidunt fuga repudiandae est rerum" textAlignment="JUSTIFY">
+                     <styleClass>
+                        <String fx:value="text-white" />
+                        <String fx:value="text-justify" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="513.0" layoutY="64.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="30.0" text="Login know and start your session" underline="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="font-title" />
+                        <String fx:value="main-txt-colour" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" lineSpacing="5.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="73.0" prefWidth="348.0" styleClass="contect-colour" text="Provide your email and password to login, your login&#10;data are private and will never be shared with&#10;someone else" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="30.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXTextField fx:id="email" labelFloat="true" maxWidth="1.7976931348623157E308" minWidth="-Infinity" onKeyReleased="#validateEmail" prefHeight="30.0" prefWidth="348.0" promptText="Email Address" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="MAIL_RU" size="18">
+                           <HBox.margin>
+                              <Insets left="-15.0" top="9.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="contect-colour" />
+                              <String fx:value="fields-icon" />
+                           </styleClass>
+                        </MaterialDesignIconView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="emailMsg" maxWidth="1.7976931348623157E308" text="Email Msgs" textFill="#d02c2c" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="30.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXPasswordField fx:id="password" labelFloat="true" maxWidth="1.7976931348623157E308" minWidth="-Infinity" onKeyReleased="#validatePassword" prefWidth="348.0" promptText="Password" styleClass="fields" />
+                        <MaterialDesignIconView glyphName="KEY" size="18">
+                           <HBox.margin>
+                              <Insets left="-17.0" top="8.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="contect-colour" />
+                              <String fx:value="fields-icon" />
+                           </styleClass>
+                        </MaterialDesignIconView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="passMsg" layoutX="10.0" layoutY="178.0" maxWidth="1.7976931348623157E308" text="Pass Msgs" textFill="#d02c2c" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXCheckBox fx:id="passBox" maxWidth="1.7976931348623157E308" onAction="#showHidePass" prefHeight="30.0" text="Show / Hide password" textAlignment="RIGHT">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </JFXCheckBox>
+                  <Label fx:id="unmaskPass" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="30.0" text="Unmask Password" textFill="#2d803f" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton onAction="#login" styleClass="main-button" text="Login">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="251.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="LOCK" size="15" styleClass="icon" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXSpinner fx:id="progress" visible="false" />
+               </children>
+            </VBox>
+            <Label layoutX="728.0" layoutY="556.0" text="Version 1.2.0.1" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
+               <styleClass>
+                  <String fx:value="text-light" />
+                  <String fx:value="version-font-size" />
+               </styleClass>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

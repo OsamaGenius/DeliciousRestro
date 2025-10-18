@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="840.0" prefWidth="830.0" styleClass="bg-white" stylesheets="@../../aid/css/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restro.controllers.admins.FoodController">
+   <children>
+      <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" />
+      <JFXTabPane fx:id="tabPane" styleClass="tabpane" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="3.0">
+         <tabs>
+            <Tab fx:id="viewTab" text="VIEW ALL FOODS">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="819.0">
+                     <children>
+                        <VBox layoutX="315.0" layoutY="228.0" maxHeight="-Infinity" minHeight="-Infinity" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="777.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <JFXButton onAction="#printFoodsMenu" styleClass="main-button" text="Extract">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="PRINTER" size="18" styleClass="icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXTextField fx:id="search" labelFloat="true" onKeyReleased="#findFoods" prefHeight="30.0" prefWidth="350.0" promptText="Search foods by their names, prices, or categories" styleClass="fields">
+                                       <HBox.margin>
+                                          <Insets left="325.0" />
+                                       </HBox.margin></JFXTextField>
+                                    <MaterialDesignIconView glyphName="MAGNIFY" rotate="360.0" size="20" styleClass="contect-colour">
+                                       <HBox.margin>
+                                          <Insets left="-20.0" top="5.0" />
+                                       </HBox.margin>
+                                    </MaterialDesignIconView>
+                                 </children>
+                              </HBox>
+                              <JFXTreeTableView fx:id="table" prefHeight="720.0" prefWidth="779.0" styleClass="table">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </JFXTreeTableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="LIBRARY" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+            <Tab text="ADD FOOD CATEGORIES">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="819.0">
+                     <children>
+                        <HBox layoutX="103.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="427.0" prefWidth="380.0" styleClass="border-primary">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="40.0" prefWidth="378.0" text="Add Categories" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="box-primary" />
+                                          <String fx:value="font-subtitle" />
+                                          <String fx:value="text-white" />
+                                       </styleClass>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                                       <children>
+                                          <JFXTextField fx:id="cateAddTxt" labelFloat="true" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#validateCateAddData" prefHeight="31.0" prefWidth="333.0" promptText="Category name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="DATABASE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-21.0" top="8.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="cateAddMsg" prefHeight="20.0" text="Category messages" textFill="#b22626" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox prefHeight="197.0" prefWidth="338.0">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXTextArea fx:id="cateAddDescTxt" labelFloat="true" promptText="Category description ( Optional )" styleClass="fields" />
+                                       </children>
+                                    </HBox>
+                                    <JFXButton onAction="#addCategories" styleClass="main-button" text="Insert">
+                                       <VBox.margin>
+                                          <Insets left="260.0" top="35.0" />
+                                       </VBox.margin>
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="PLUS_CIRCLE" size="20" styleClass="icon" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="19.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="495.0" prefWidth="381.0" styleClass="border-danger">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="40.0" prefWidth="378.0" text="Update Categories" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="box-danger" />
+                                          <String fx:value="font-subtitle" />
+                                          <String fx:value="text-white" />
+                                       </styleClass>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <JFXTextField fx:id="hiddenCate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                    <JFXComboBox fx:id="cateBox" labelFloat="true" onAction="#cateSelection" prefHeight="30.0" prefWidth="340.0" promptText="Select category to update" visibleRowCount="4">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="fields" />
+                                          <String fx:value="combBox" />
+                                       </styleClass>
+                                    </JFXComboBox>
+                                    <HBox maxWidth="-Infinity" minWidth="-Infinity">
+                                       <children>
+                                          <JFXTextField fx:id="cateEditTxt" disable="true" labelFloat="true" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#validateCateEditData" prefHeight="30.0" prefWidth="339.0" promptText="Enter new category name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="DATABASE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-20.0" top="8.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="cateEditMsg" prefHeight="20.0" text="New category messages" textFill="#bc2424" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="40.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox prefHeight="197.0" prefWidth="338.0">
+                                       <children>
+                                          <JFXTextArea fx:id="cateEditDescTxt" disable="true" labelFloat="true" promptText="Category description ( Optional )" styleClass="fields" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXButton layoutX="143.0" layoutY="10.0" onAction="#cancelCateUpdates" styleClass="warning-button" text="Cancel">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton onAction="#delCategories" styleClass="danger-button" text="Delete">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE_CIRCLE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton layoutX="10.0" layoutY="10.0" onAction="#editCategories" styleClass="main-button" text="Edit">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="DATABASE" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+            <Tab fx:id="addTab" text="ADD FOOD">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="121.0" layoutY="78.0" prefHeight="473.0" prefWidth="750.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="708.0" prefWidth="410.0" styleClass="border-primary">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Add new foods" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-primary" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Circle fx:id="addImg" fill="#f5f5f5" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" styleClass="primary-shadow">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="124.0" />
+                                             </VBox.margin>
+                                          </Circle>
+                                          <HBox>
+                                             <children>
+                                                <JFXTextField fx:id="addImgTxt" labelFloat="true" prefHeight="30.0" prefWidth="200.0" promptText="Image Name" styleClass="fields" />
+                                                <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="192.0">
+                                                   <children>
+                                                      <JFXButton maxHeight="1.7976931348623157E308" onAction="#chooseFoodsImage" prefHeight="40.0" prefWidth="100.0" text="Choose">
+                                                         <styleClass>
+                                                            <String fx:value="main-button" />
+                                                            <String fx:value="border-0" />
+                                                            <String fx:value="shadow-none" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets bottom="-2.0" />
+                                                         </HBox.margin>
+                                                      </JFXButton>
+                                                      <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#uploadFoodImg" prefHeight="40.0" prefWidth="100.0" text="Upload">
+                                                         <styleClass>
+                                                            <String fx:value="danger-button" />
+                                                            <String fx:value="border-0" />
+                                                            <String fx:value="shadow-none" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets bottom="-2.0" />
+                                                         </HBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="imgAddMsg" prefHeight="20.0" text="Image Messages" textFill="#1b1b1ba1" visible="false" />
+                                       </children>
+                                    </VBox>
+                                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXTextField fx:id="nameAddTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateFoodsNames" prefHeight="30.0" prefWidth="369.0" promptText="Food Name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="FOOD_APPLE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="nameAddMsg" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food name Messages" textFill="#1b1b1ba1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="31.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <children>
+                                          <JFXTextField fx:id="priceAddTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateFoodsPrices" prefHeight="30.0" prefWidth="369.0" promptText="Food Price" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="CURRENCY_USD" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="priceAddMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food price Messages" textFill="#1b1b1ba1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="11.0" layoutY="112.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXComboBox fx:id="cateAddBox" labelFloat="true" minWidth="-Infinity" onAction="#validateFoodsCates" prefHeight="30.0" prefWidth="369.0" promptText="Choose food category" visibleRowCount="4">
+                                             <styleClass>
+                                                <String fx:value="combBox" />
+                                                <String fx:value="fields" />
+                                             </styleClass>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="cateFoodAddMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Category Messages" textFill="#1b1b1ba1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXTextArea fx:id="descAddTxt" labelFloat="true" prefHeight="120.0" promptText="Food description (Optional)" styleClass="fields">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextArea>
+                                    <JFXButton onAction="#addFoods" styleClass="main-button" text="Insert">
+                                       <graphic>
+                                          <MaterialDesignIconView glyphName="PLUS_CIRCLE" size="20" styleClass="icon" />
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="290.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="484.0" prefWidth="320.0" styleClass="border-danger">
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Latest added foods" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-danger" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <VBox fx:id="addLatestFoods">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="FOOD" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+            <Tab fx:id="editTab" text="UPDATE FOODS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="473.0" prefWidth="750.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="712.0" prefWidth="410.0" styleClass="border-primary">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Edit exsisting foods" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-primary" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <VBox>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Circle fx:id="editImg" fill="#f5f5f5" radius="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" styleClass="primary-shadow">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" left="124.0" />
+                                             </VBox.margin>
+                                          </Circle>
+                                          <HBox>
+                                             <children>
+                                                <JFXTextField fx:id="editImgTxt" editable="false" labelFloat="true" prefHeight="31.0" prefWidth="180.0" promptText="Image Name" styleClass="fields" />
+                                                <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefWidth="192.0">
+                                                   <children>
+                                                      <JFXButton maxHeight="1.7976931348623157E308" onAction="#chooseFoodsImage" prefHeight="40.0" prefWidth="100.0" text="Choose">
+                                                         <styleClass>
+                                                            <String fx:value="main-button" />
+                                                            <String fx:value="border-0" />
+                                                            <String fx:value="shadow-none" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets bottom="-2.0" />
+                                                         </HBox.margin>
+                                                      </JFXButton>
+                                                      <JFXButton layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#uploadFoodImg" prefHeight="40.0" prefWidth="100.0" text="Upload">
+                                                         <styleClass>
+                                                            <String fx:value="danger-button" />
+                                                            <String fx:value="border-0" />
+                                                            <String fx:value="shadow-none" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets bottom="-2.0" />
+                                                         </HBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="imgEditMsg" prefHeight="20.0" text="Image Messages" textFill="#464343a1" visible="false" />
+                                       </children>
+                                    </VBox>
+                                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXTextField fx:id="nameEditTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateFoodsNames" prefHeight="30.0" prefWidth="369.0" promptText="Food Name" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="FOOD_APPLE" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="nameEditMsg" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food name Messages" textFill="#464343a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="31.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <children>
+                                          <JFXTextField fx:id="priceEditTxt" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#validateFoodsPrices" prefHeight="30.0" prefWidth="369.0" promptText="Food Price" styleClass="fields" />
+                                          <MaterialDesignIconView glyphName="CURRENCY_USD" size="20" styleClass="contect-colour">
+                                             <HBox.margin>
+                                                <Insets left="-24.0" top="7.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignIconView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label fx:id="priceEditMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Food price Messages" textFill="#464343a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox layoutX="11.0" layoutY="112.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXComboBox fx:id="cateEditBox" labelFloat="true" minWidth="-Infinity" onAction="#validateFoodsCates" prefHeight="30.0" prefWidth="369.0" promptText="Choose food category" visibleRowCount="4">
+                                             <styleClass>
+                                                <String fx:value="combBox" />
+                                                <String fx:value="fields" />
+                                             </styleClass>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="cateFoodEditMsg" layoutX="31.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" text="Category Messages" textFill="#464343a1" visible="false">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXTextArea fx:id="descEditTxt" labelFloat="true" prefHeight="120.0" promptText="Food description (Optional)" styleClass="fields">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextArea>
+                                    <HBox alignment="CENTER_RIGHT">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <JFXButton layoutX="168.0" layoutY="10.0" onAction="#cancelFoodUpdate" styleClass="warning-button" text="Cancel">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton layoutX="10.0" layoutY="10.0" onAction="#delFoods" styleClass="danger-button" text="Delete">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="CLOSE_OCTAGON_OUTLINE" size="20" styleClass="icon" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXButton layoutX="110.0" layoutY="10.0" onAction="#editFoods" styleClass="main-button" text="Edit">
+                                             <graphic>
+                                                <MaterialDesignIconView glyphName="PENCIL_BOX" size="20" styleClass="icon" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
+                                    <JFXTextField fx:id="hiddenFood" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" visible="false" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="484.0" prefWidth="320.0" styleClass="border-danger">
+                                 <children>
+                                    <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="40.0" text="Latest Updated foods" textAlignment="CENTER">
+                                       <styleClass>
+                                          <String fx:value="font-title" />
+                                          <String fx:value="text-white" />
+                                          <String fx:value="box-danger" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <VBox fx:id="editLatestFoods">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <MaterialDesignIconView glyphName="FOOD_VARIANT" size="28" styleClass="main-txt-colour" translateX="-10.0" />
+               </graphic>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

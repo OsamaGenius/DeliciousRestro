@@ -1,0 +1,409 @@
+/*
+** main color: #15415d
+** repfill color: #6aa9c2
+*/
+
+.mainFxmlClass {
+    -fx-background-color: transparent;
+    -fx-font: 14px 'Calibir Light', serif;
+}
+
+.version-font-size {
+    -fx-font-size: 11px!important;
+}
+
+.content {
+    -fx-effect: dropshadow(gaussian, #82a9e780, 5.8, 0.9, 0.5, 1);
+    -fx-background-color: #f9f9f9;
+    -fx-border-radius: 50px;
+}
+
+.contect-colour { 
+    -fx-text-fill: #686868;    
+    -fx-fill: #686868;
+}
+
+.padding {
+    -fx-pref-height: 100px;
+}
+
+.list-box {
+    -fx-padding: 10px;
+}
+
+.list-box:hover {
+    -fx-background-color: #15415d50;
+}
+
+.list-box:pressed {
+    -fx-background-color: #15415d80;
+}
+
+/*******************************************************************************
+**  Dashboard Panel design
+*******************************************************************************/
+.mainBox {
+    -fx-border-size: 0.5px;
+    -fx-border-radius: 30px;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 100px;
+}
+
+.box-primary {
+    -fx-background-color: #15415d;
+    -fx-border-color: #15415d;
+}
+
+.box-success {
+    -fx-background-color: #198754;
+    -fx-border-color: #198754;
+}
+
+.box-danger {
+    -fx-background-color: #dc3545;
+    -fx-border-color: #dc3545;
+}
+
+.box-warning {
+    -fx-background-color: #bfa919;
+    -fx-border-color: #bfa919;
+}
+
+/*******************************************************************************
+**  Shadows design
+*******************************************************************************/
+.primary-shadow {
+    -fx-effect: dropshadow(one-pass-box, #15415d60, 6, 1, 0.5, 1);
+}
+.success-shadow {
+    -fx-effect: dropshadow(one-pass-box, #19875460, 6, 1, 0.5, 1);
+}
+.warning-shadow {
+    -fx-effect: dropshadow(one-pass-box, #bfa91960, 6, 1, 0.5, 1);
+}
+.danger-shadow {
+    -fx-effect: dropshadow(one-pass-box, #dc354560, 6, 1, 0.5, 1);
+}
+
+/*******************************************************************************
+**  Borders design
+*******************************************************************************/
+.border-primary {
+    -fx-border-color: #15415d50;
+    -fx-border-size: 0.2;
+}
+
+.border-danger {
+    -fx-border-color: #dc354550;
+    -fx-border-size: 0.2;
+}
+
+.border-success {
+    -fx-border-color: #19875450;
+    -fx-border-size: 0.2;
+}
+
+/*******************************************************************************
+**  bg colours design
+*******************************************************************************/
+.main-bg-colour {
+    -fx-background-color: linear-gradient(to bottom, #15415db9 0%, #15415d 100%);
+    -fx-fill: linear-gradient(to bottom, #15415db9 0%, #15415d 100%);
+}
+
+.bg-white {
+    -fx-background-color: #f9f9f9;
+}
+
+.bg-light {
+    -fx-background-color: #f5f5f5c9;
+}
+
+.bg-trasparent {
+    -fx-background-color: transparent;
+}
+
+/*******************************************************************************
+**  Text colours design
+*******************************************************************************/
+.main-txt-colour {
+    -fx-text-fill: #15415d;    
+    -fx-fill: #15415d;
+}
+
+.text-white {
+    -fx-text-fill: #eee;
+    -fx-fill: #eee;
+}
+
+.text-light {
+    -fx-text-fill: rgba(50, 50, 50, 0.5);
+    -fx-fill: rgba(50, 50, 50, 0.5);
+}
+
+.font-title {
+    -fx-font-size: 20px;
+}
+
+.font-subtitle {
+    -fx-font-size: 18px;
+}
+
+.image {
+    -fx-effect: dropshadow(gaussian, #ffffffa0, 5, 0.85, 0.5, 1);
+}
+
+/*******************************************************************************
+**  buttons design
+*******************************************************************************/
+.bar-btn {
+    -jfx-rippler-fill: #63666640;
+}
+
+.hover-btn {
+    /*-fx-background-color: linear-gradient(to right, #15415d80 0%, #15415d50 100%);*/
+    -jfx-rippler-fill: transparent !important;
+}
+
+.main-button {
+    -fx-text-fill: #15415d;
+    -fx-border-color: #15415d;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+}
+
+.main-button:hover {
+    -fx-background-color: linear-gradient(to right, #15415db9 0%, #15415de9 100%);
+    -fx-effect: dropshadow(gaussian, #15415d80, 5, 0.9, 0.5, 0.5);
+    -fx-text-fill: white;
+}
+
+.success-button {
+    -fx-text-fill: #198754;
+    -fx-border-color: #198754;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+}
+
+.success-button:hover {
+    -fx-background-color: linear-gradient(to right, #198754b9 0%, #198754e9 100%);
+    -fx-effect: dropshadow(gaussian, #19875480, 5, 0.9, 0.5, 0.5);
+    -fx-text-fill: white;
+}
+
+.danger-button {
+    -fx-text-fill: #dc3545;
+    -fx-border-color: #dc3545;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(to right, #dc3545b9 0%, #dc3545e9 100%);
+    -fx-effect: dropshadow(gaussian, #dc354580, 5, 0.9, 0.5, 0.5);
+    -fx-text-fill: white;
+}
+
+.warning-button {
+    -fx-text-fill: #bfa919;
+    -fx-border-color: #bfa919;
+    -fx-border-radius: 5px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+}
+
+.warning-button:hover {
+    -fx-background-color: linear-gradient(to right, #bfa919b9 0%, #bfa919e9 100%);
+    -fx-effect: dropshadow(gaussian, #bfa91980, 5, 0.9, 0.5, 0.5);
+    -fx-text-fill: black;
+}
+
+.main-button .icon {
+    -fx-fill: #15415d;
+}
+
+.main-button:hover .icon {
+    -fx-fill: white;
+}
+
+.success-button .icon {
+    -fx-fill: #198754;
+}
+
+.success-button:hover .icon {
+    -fx-fill: white;
+}
+
+.danger-button .icon {
+    -fx-fill: #dc3545;
+}
+
+.danger-button:hover .icon {
+    -fx-fill: white;
+}
+
+.warning-button .icon {
+    -fx-fill: #bfa919;
+}
+
+.warning-button:hover .icon {
+    -fx-fill: black;
+}
+
+.menu-btn {
+    -fx-fill: #eee;
+    -fx-stroke: #15415d;
+    -fx-stroke-type: outside;
+}
+
+/*******************************************************************************
+**  Form fields design
+*******************************************************************************/
+.fields {
+    -fx-font-size: 15px;
+    -fx-prompt-text-fill: #000000a0;
+    -jfx-focus-color: #00000090;
+    -jfx-unfocus-color: #000000a0;   
+    -fx-text-fill: #000000B9;
+}
+
+/*******************************************************************************
+**  Tab pane design
+*******************************************************************************/
+.tabpane .tab-header-background {
+    -fx-background-color: transparent;
+}
+.tabpane .tab {
+    -fx-padding: 6px 0 6px 0;
+}
+.tabpane .headers-region > .tab > .jfx-rippler {
+    -jfx-rippler-fill: #15415d10;
+}
+.tabpane .headers-region .tab-selected-line {
+    -fx-background-color: #15415d;
+}
+.tabpane .headers-region .tab .tab-container .tab-label {
+    -fx-text-fill: #15415d;
+}
+
+/*******************************************************************************
+**  Scroll pane design
+*******************************************************************************/
+.scroll-Pane {
+    -fx-background-color: transparent;
+}
+.scroll-Pane .scroll-bar:vertical  {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+.scroll-Pane .scroll-bar:vertical .trake {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.scroll-Pane .scroll-bar:vertical:hover,
+.scroll-Pane .scroll-bar:vertical:pressed {
+    -fx-pref-width: 15;
+}
+.scroll-Pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 8 0 0;
+}
+.scroll-Pane .scroll-bar:vertical .increment-arrow,
+.scroll-Pane .scroll-bar:vertical .decrement-arrow {
+    -fx-padding: -2;
+}
+.scroll-Pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #15415d80;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 10em;
+}
+.scroll-Pane .scroll-bar:vertical .thumb:hover,
+.scroll-Pane .scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: #15415da9;
+
+}
+
+/*******************************************************************************
+**  Combo Box design
+*******************************************************************************/
+.comboBox {
+    -fx-prompt-text-fill: #000000a9;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -jfx-focus-color: #00000090;
+    -jfx-unfocus-color: #000000a0;
+}
+.comboBox .cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #909090; 
+}
+.comboBox .list-view {
+    -fx-background-color: whitesmoke;
+}
+.comboBox .list-view .list-cell {
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: #707070;
+}
+.comboBox .list-view .list-cell:hover {
+    -fx-background-color: #909090aa;
+    -fx-text-fill: #000; 
+}
+
+/*******************************************************************************
+**  Radio Buttons design
+*******************************************************************************/
+.radioButton{
+    -jfx-selected-color: #262728;
+    -jfx-unselected-color: #868989;
+}
+
+/*******************************************************************************
+**  Table design
+*******************************************************************************/
+.table .tree-table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 8;
+}
+
+.table:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected {
+    -fx-background-color: #e1e1e1;
+}
+
+/*******************************************************************************
+**  Progress Bar design
+*******************************************************************************/
+.progressBar > .bar,
+.progressBar:indeterminate > .bar{
+    -fx-background-color: #505050;
+}
+
+/*******************************************************************************
+**  Check Box design
+*******************************************************************************/
+.check-box {
+    -jfx-checked-color: #15415d;
+    -jfx-unchecked-color: #15415d;
+
+}
+
+.check-box .box {
+    -fx-border-color: #00000080;
+    -fx-border-radius: 3px;
+}
+
+/*******************************************************************************
+**  Reset necessary element styles
+*******************************************************************************/
+.border-0 {
+    -fx-border-radius: 0 !important;
+}
+
+.shadow-none {
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0) !important;
+}
