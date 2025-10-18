@@ -1,4 +1,13 @@
 ﻿# DeliciousRestro
+DeliciousRestro is a simple JavaFX-based application designed to manage a restaurant’s operations efficiently. The system allows the management of food items, juices, and customer orders in a streamlined and user-friendly interface.
+
+## Features
+- Food Management: Add, update, and remove food items, also extract foods menu.
+- Juice Management: CRUD operations, and Manage the menu of juices with ease.
+- Order Handling: Create and track customer orders efficiently.
+- User-Friendly Interface: Built with JavaFX for smooth desktop interaction.
+
+Ideal for: Small restaurants or cafes looking for a lightweight system to organize their menu and track orders quickly.
 
 ## Project Demo
 Here is an demo of the project windows
@@ -17,3 +26,4 @@ Here is an demo of the project windows
 
 #### Report About Juices Menu
 ![Juices Menu](https://github.com/user-attachments/assets/db4a1468-6f50-4a1c-b115-e55bfb749fd2)
+
